@@ -2,7 +2,8 @@ bs={};
 bs.Glyphicon = function(type, ariaHidden, ariaLabel) {
 	this.type       = type;
 	this.ariaHidden = ariaHidden;
-	this.ariaLabel = ariaLabel;
+	this.ariaLabel  = ariaLabel;
+	this.children   = [];
 
 	this.setType = function(type) {
 		this.type = type;
@@ -28,6 +29,20 @@ bs.Glyphicon = function(type, ariaHidden, ariaLabel) {
 		return this.ariaLabel;
 	};
 
+	this.addChild = function(child) {
+		this.children.push(child);
+	};
+
+	this.getChildrenString = function() {
+		var ret = '';
+
+		for(var i = 0; i < this.children.length; i++) {
+			ret += this.children[i].toString();
+		}
+
+		return ret;
+	};
+
 	this.toString    = function() {
 		var ret = '<span class="glyphicon';
 
@@ -42,7 +57,11 @@ bs.Glyphicon = function(type, ariaHidden, ariaLabel) {
 		if(this.ariaLabel)
 			ret += ' aria-label="' + this.ariaLabel + '"';
 
-		ret += '></span>';
+		ret += '>'
+
+		ret += this.getChildrenString();
+
+		ret += '</span>';
 
 		return ret;
 	};
