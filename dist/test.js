@@ -41,6 +41,9 @@ var collapse2 = new Panel(collapseTitle2);
 var collapse3 = new Panel(collapseTitle3);
 var collapse4 = new Panel(collapseTitle4, true);
 
+collapse2.setFooter('Footer 2');
+collapse3.setFooter('Footer 3');
+
 collapse2.setColorClass('primary');
 collapse3.setColorClass('warning');
 collapse4.setColorClass('success');
