@@ -10,10 +10,10 @@ var row = new Row();
 var col1 = new Column(6);
 var col2 = new Column(6);
 var glyph = new Glyphicon('euro');
-var collapse1 = new CollapsePanel('One');
+var collapse1 = new CollapsePanel('One', true);
 var collapse2 = new CollapsePanel('Two');
 var collapse3 = new CollapsePanel('Three');
-var collapse4 = new CollapsePanel('Four');
+var collapse4 = new CollapsePanel('Four', true);
 
 collapse2.setColorClass('primary');
 collapse3.setColorClass('warning');
