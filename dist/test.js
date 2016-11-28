@@ -1,7 +1,7 @@
 //NODE
 var Page = require('../lib/Page.js'),
     Glyphicon = require('../lib/Glyphicon.js'),
-    CollapsePanel = require('../lib/CollapsePanel.js'),
+    Panel = require('../lib/Panel.js'),
     Row = require('../lib/Row.js'),
     Column = require('../lib/Column.js')
 
@@ -10,10 +10,10 @@ var row = new Row();
 var col1 = new Column(6);
 var col2 = new Column(6);
 var glyph = new Glyphicon('euro');
-var collapse1 = new CollapsePanel('One', true);
-var collapse2 = new CollapsePanel('Two');
-var collapse3 = new CollapsePanel('Three');
-var collapse4 = new CollapsePanel('Four', true);
+var collapse1 = new Panel('One', true);
+var collapse2 = new Panel('Two');
+var collapse3 = new Panel('Three');
+var collapse4 = new Panel('Four', true);
 
 collapse2.setColorClass('primary');
 collapse3.setColorClass('warning');
