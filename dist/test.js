@@ -4,7 +4,8 @@ var Page = require('../lib/Page.js'),
     Panel = require('../lib/Panel.js'),
     Row = require('../lib/Row.js'),
     Column = require('../lib/Column.js'),
-    BootstrapContainer = require('../lib/BootstrapContainer.js');
+    BootstrapContainer = require('../lib/BootstrapContainer.js'),
+    PanelAccordion = require('../lib/PanelAccordion.js');
 
 var page = new Page();
 
@@ -44,18 +45,30 @@ var collapse4 = new Panel(collapseTitle4, true);
 collapse2.setFooter('Footer 2');
 collapse3.setFooter('Footer 3');
 
+collapse1.setColorClass('danger');
 collapse2.setColorClass('primary');
 collapse3.setColorClass('warning');
 collapse4.setColorClass('success');
 
-col1.addChild(collapse1);
-col2.addChild(collapse2);
+// col1.addChild(collapse1);
+// col2.addChild(collapse2);
+
+// collapse1.addChild(collapse3);
+// collapse2.addChild(collapse4);
+
+accordion = new PanelAccordion();
+accordion.addPanel(collapse2);
+accordion.addPanel(collapse1);
+
+accordion2 = new PanelAccordion();
+accordion2.addPanel(collapse3);
+accordion2.addPanel(collapse4);
+
+col1.addChild(accordion);
+col2.addChild(accordion2);
 
 row.addChild(col1);
 row.addChild(col2);
-
-collapse1.addChild(collapse3);
-collapse2.addChild(collapse4);
 
 page.addChild(row);
 
